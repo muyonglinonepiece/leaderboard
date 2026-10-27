@@ -1,0 +1,5 @@
+benchmark,dataset_version,submission_id,team,agent,model,domain,pass_at_1,n_trials,n_tasks,mean_cost_usd,mean_walltime_s,submitted_at
+chi-bench,chi-bench-v1.0.0,u2med-hermes-deepseek-flash-cm-v51,U2Med,hermes,openai/deepseek-flash,overall,0.4,75,75,0.10373394979866667,523.7759388266667,2026-10-27T06:42:47Z
+chi-bench,chi-bench-v1.0.0,u2med-hermes-deepseek-flash-cm-v51,U2Med,hermes,openai/deepseek-flash,cm,0.28,25,25,0.179219291796,824.5106575599999,2026-10-27T06:42:47Z
+chi-bench,chi-bench-v1.0.0,u2med-hermes-deepseek-flash-cm-v51,U2Med,hermes,openai/deepseek-flash,pa_provider,0.64,25,25,0.059978694652,324.75507188,2026-10-27T06:42:47Z
+chi-bench,chi-bench-v1.0.0,u2med-hermes-deepseek-flash-cm-v51,U2Med,hermes,openai/deepseek-flash,pa_um,0.28,25,25,0.072003862948,422.06208704,2026-10-27T06:42:47Z

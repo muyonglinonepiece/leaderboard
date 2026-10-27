@@ -1,0 +1,117 @@
+{
+    "id": "b3c73f4c-e975-42b5-9410-e34888cae3fd",
+    "task_name": "actava-ai/pa_t008_t008_o002_p01_new_referral_provider",
+    "trial_name": "pa_t008_t008_o002_p01_new_referr__EXwV35d",
+    "trial_uri": "file:///lake1/users/muyonglin/med-benchmark/chi-bench-v6-ds/logs/submissions/u2med-hermes-deepseek-flash-cm-v51/pa_provider/u2med-hermes-deepseek-flash-cm-v51__pa_provider/pa_t008_t008_o002_p01_new_referr__EXwV35d",
+    "task_id": {
+        "path": "/lake1/users/muyonglin/med-benchmark/chi-bench-v6-ds/data/prior_auth_provider/tasks/pa_t008_t008_o002_p01_new_referral_provider"
+    },
+    "source": null,
+    "task_checksum": "259ef5f26831d173025e3517d6fb27756a4d3b67f75806cc54a2429fe547f5f5",
+    "config": {
+        "task": {
+            "path": "/lake1/users/muyonglin/med-benchmark/chi-bench-v6-ds/data/prior_auth_provider/tasks/pa_t008_t008_o002_p01_new_referral_provider",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "pa_t008_t008_o002_p01_new_referr__EXwV35d",
+        "trials_dir": "logs/submissions/u2med-hermes-deepseek-flash-cm-v51/pa_provider/u2med-hermes-deepseek-flash-cm-v51__pa_provider",
+        "install_only": false,
+        "timeout_multiplier": 6.0,
+        "agent_timeout_multiplier": 6.0,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "chi_bench.experiment.agents.hermes_harness:HermesHarness",
+            "model_name": "openai/deepseek-flash",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "env": {
+                "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+                "OPENAI_BASE_URL": "https://api.deepseek.com/v1"
+            },
+            "mcp_servers": []
+        },
+        "environment": {
+            "type": null,
+            "import_path": "chi_bench.experiment.docker_env:ChiBenchDockerEnvironment",
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "job_id": "b460b6ca-0dba-48a5-a3d9-7f8fa86d9139"
+    },
+    "agent_info": {
+        "name": "hermes",
+        "version": "Hermes Agent v0.17.0 (2026.6.19)\nProject: /usr/local/lib/hermes-agent/venv/lib/python3.12/site-packages\nPython: 3.12.14\nOpenAI SDK: 2.24.0\nUpdate available: 1 commit behind — run 'uv pip install --upgrade hermes-agent'",
+        "model_info": {
+            "name": "deepseek-flash",
+            "provider": "openai"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 148606,
+        "n_cache_tokens": 3436668,
+        "n_output_tokens": 15626,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-10-24T13:42:11.550702Z",
+    "finished_at": "2026-10-24T13:46:32.522629Z",
+    "environment_setup": {
+        "started_at": "2026-10-24T13:42:11.715834Z",
+        "finished_at": "2026-10-24T13:42:27.475193Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-10-24T13:42:27.475218Z",
+        "finished_at": "2026-10-24T13:42:32.927230Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-10-24T13:42:32.927325Z",
+        "finished_at": "2026-10-24T13:46:29.057993Z"
+    },
+    "verifier": {
+        "started_at": "2026-10-24T13:46:29.791525Z",
+        "finished_at": "2026-10-24T13:46:32.134434Z"
+    },
+    "step_results": null
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "chi-bench/submission/v1",
+  "submission": {
+    "id": "u2med-hermes-deepseek-flash-cm-v51",
+    "team": "U2Med",
+    "contact": "muyonglin@unisound.com",
+    "agent": "hermes",
+    "model": "openai/deepseek-flash",
+    "notes": "Hermes on openai/deepseek-flash, image chi-bench:cm-v51: one harness, one model,\nstrict single-attempt pass@1 (n_attempts = 1, concurrency 6). Official chi-bench\nforwards the task instruction to stock Hermes (max_turns 90, hermes-cli tools, no\ndomain protocol). v51 replaces that pass-through with one public-record procedure.\n\nThe procedure is answer-blind. Prompts, support tools, and turn budgets key only\nto the case's own visible chart, public handbook, exposed tool results, and the\nmember's actual replies. They never read the hidden answer key, rubric, or\nsolution. Local coding tools stay off. Context compression is 0.75, memory and\ncheckpoints stay off, and one bounded repair resumes the same session if the\npublic workflow is unfinished.\n\nPer-domain configuration (all single-attempt, same agent and model):\n  - Prior authorization (pa_provider): provider protocol plus compact chart tools.\n    Before a case is created, request fields are reviewed against the public order\n    or the public documents; unresolved fields come back for another review and are\n    not filled from hidden state. Agent budget 120 turns.  16/25 = 64%.\n  - Utilization management (pa_um): payer protocol plus intake and audit tools.\n    Disposition is required, with no default lane. A true public gold-card check\n    rejects nurse_review and md_review in favor of auto_approval.  7/25 = 28%.\n  - Care management (cm): care-management protocol, compact chart and evidence\n    tools, and a call budget. A non-empty SDoH finding on\n    a missing, unknown, or unassessed evidence row is rejected. The evidence gate\n    stays off.  7/25 = 28%.\n\nOverall: 30/75 = 40.0% strict single-attempt pass@1.\n",
+    "submitted_at": "2026-10-27T06:42:47Z"
+  },
+  "dataset": {
+    "version": "chi-bench-v1.0.0",
+    "domains": [
+      "cm",
+      "pa_provider",
+      "pa_um"
+    ],
+    "name": "chi-bench"
+  },
+  "results": {
+    "overall": {
+      "n_trials": 75,
+      "n_tasks": 75,
+      "pass_at_1": 0.4,
+      "mean_cost_usd": 0.10373394979866667,
+      "mean_walltime_s": 523.7759388266667
+    },
+    "per_domain": {
+      "cm": {
+        "n_trials": 25,
+        "n_tasks": 25,
+        "pass_at_1": 0.28,
+        "mean_cost_usd": 0.179219291796,
+        "mean_walltime_s": 824.5106575599999
+      },
+      "pa_provider": {
+        "n_trials": 25,
+        "n_tasks": 25,
+        "pass_at_1": 0.64,
+        "mean_cost_usd": 0.059978694652,
+        "mean_walltime_s": 324.75507188
+      },
+      "pa_um": {
+        "n_trials": 25,
+        "n_tasks": 25,
+        "pass_at_1": 0.28,
+        "mean_cost_usd": 0.072003862948,
+        "mean_walltime_s": 422.06208704
+      }
+    },
+    "mean_cost_usd": 0.10373394979866667,
+    "mean_walltime_s": 523.7759388266667
+  },
+  "provenance": {
+    "chi_bench_git_sha": "0ca78a3ac0377f05350e2125c5e51cc286216da4",
+    "image_digest": "sha256:87d87aaa1b9f5e7a7ae7664cbbf99e03e06f0498f0d4c6023c5a78bcf0e1afde",
+    "judge_model": "claude-opus-4-7",
+    "harness_version": "v7"
+  }
+}

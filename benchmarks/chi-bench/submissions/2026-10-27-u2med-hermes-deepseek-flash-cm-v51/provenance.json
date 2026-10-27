@@ -1,0 +1,6 @@
+{
+  "chi_bench_git_sha": "0ca78a3ac0377f05350e2125c5e51cc286216da4",
+  "image_digest": "sha256:87d87aaa1b9f5e7a7ae7664cbbf99e03e06f0498f0d4c6023c5a78bcf0e1afde",
+  "judge_model": "claude-opus-4-7",
+  "harness_version": "v7"
+}

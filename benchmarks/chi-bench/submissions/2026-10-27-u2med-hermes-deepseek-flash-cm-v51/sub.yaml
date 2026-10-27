@@ -1,0 +1,51 @@
+schema: chi-bench/submission/v1
+
+submission:
+  id: u2med-hermes-deepseek-flash-cm-v51
+  team: U2Med
+  contact: muyonglin@unisound.com
+  agent: hermes
+  model: openai/deepseek-flash
+  notes: |
+    Hermes on openai/deepseek-flash, image chi-bench:cm-v51: one harness, one model,
+    strict single-attempt pass@1 (n_attempts = 1, concurrency 6). Official chi-bench
+    forwards the task instruction to stock Hermes (max_turns 90, hermes-cli tools, no
+    domain protocol). v51 replaces that pass-through with one public-record procedure.
+
+    The procedure is answer-blind. Prompts, support tools, and turn budgets key only
+    to the case's own visible chart, public handbook, exposed tool results, and the
+    member's actual replies. They never read the hidden answer key, rubric, or
+    solution. Local coding tools stay off. Context compression is 0.75, memory and
+    checkpoints stay off, and one bounded repair resumes the same session if the
+    public workflow is unfinished.
+
+    Per-domain configuration (all single-attempt, same agent and model):
+      - Prior authorization (pa_provider): provider protocol plus compact chart tools.
+        Before a case is created, request fields are reviewed against the public order
+        or the public documents; unresolved fields come back for another review and are
+        not filled from hidden state. Agent budget 120 turns.  16/25 = 64%.
+      - Utilization management (pa_um): payer protocol plus intake and audit tools.
+        Disposition is required, with no default lane. A true public gold-card check
+        rejects nurse_review and md_review in favor of auto_approval.  7/25 = 28%.
+      - Care management (cm): care-management protocol, compact chart and evidence
+        tools, and a call budget. A non-empty SDoH finding on a missing, unknown, 
+        or unassessed evidence row is rejected. The evidence gate stays off.  7/25 = 28%.
+
+    Overall: 30/75 = 40.0% strict single-attempt pass@1.
+
+run:
+  environment: docker
+  n_attempts: 1
+  concurrency: 6
+  max_retries: 0
+  timeout_multiplier: 6.0
+  agent_timeout_multiplier: 6.0
+  env_file: .env
+
+dataset:
+  version: chi-bench-v1.0.0
+  domains: [cm, pa, um]
+
+paths:
+  data_root: data
+  output_root: logs/submissions/u2med-hermes-deepseek-flash-cm-v51
